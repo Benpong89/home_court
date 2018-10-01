@@ -44,28 +44,47 @@ class Main extends React.Component {
   }
 
   render() {
-    const newsArticles = this.state.articles.map((article, idx) => {
-      return (
-        <div className="article-box" key={idx}>
-          <li className="article-title">
-            <a className="article-title" href={article.url}>
-              {article.title}
-            </a>
-          </li>
-          <img className="article-image" src={article.urlToImage} alt="" />
-          <li className="article-description">{article.description}</li>
-          <li className="article-source">Source: {article.source.name}</li>
-          <li className="article-time">{article.publishedAt}</li>
-        </div>
-      );
-    });
+    const newsArticlesA = this.state.articles
+      .slice(0, this.state.articles.length / 2)
+      .map((article, idx) => {
+        return (
+          <div className="article-box" key={idx}>
+            <li className="article-title">
+              <a className="article-title" href={article.url}>
+                {article.title}
+              </a>
+            </li>
+            <img className="article-image" src={article.urlToImage} alt="" />
+            <li className="article-description">{article.description}</li>
+            <li className="article-source">Source: {article.source.name}</li>
+            <li className="article-time">{article.publishedAt}</li>
+          </div>
+        );
+      });
+
+    const newsArticlesB = this.state.articles
+      .slice(this.state.articles.length / 2)
+      .map((article, idx) => {
+        return (
+          <div className="article-box" key={idx}>
+            <li className="article-title">
+              <a className="article-title" href={article.url}>
+                {article.title}
+              </a>
+            </li>
+            <img className="article-image" src={article.urlToImage} alt="" />
+            <li className="article-description">{article.description}</li>
+            <li className="article-source">Source: {article.source.name}</li>
+            <li className="article-time">{article.publishedAt}</li>
+          </div>
+        );
+      });
 
     return (
       <div className="main-container">
         <h1 className="main-title">HOME COURT</h1>
-        <h3 className="sub-main-title">
-          Get updated on your favorite sports. Search by city or state.{" "}
-        </h3>
+        <h3 className="sub-main-title">Get updated on your favorite sports!</h3>
+        <h3 className="sub-main-title2">Search by city or state</h3>
         <form className="search-box" onSubmit={this.handleSubmit}>
           <input
             className="search-box-input"
@@ -74,7 +93,10 @@ class Main extends React.Component {
           />
           <input className="hidden" type="submit" />
         </form>
-        <ul>{newsArticles}</ul>
+        <div className="articles-container">
+          <ul>{newsArticlesA}</ul>
+          <ul>{newsArticlesB}</ul>
+        </div>
       </div>
     );
   }
