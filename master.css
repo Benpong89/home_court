@@ -1,62 +1,54 @@
-@import url('https://fonts.googleapis.com/css?family=Exo+2:800');
-@import url('https://fonts.googleapis.com/css?family=Karla');
+@import url("https://fonts.googleapis.com/css?family=Exo+2:800");
+@import url("https://fonts.googleapis.com/css?family=Karla");
+@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300");
+@import url("https://fonts.googleapis.com/css?family=Squada+One");
+@import url("https://fonts.googleapis.com/css?family=Arvo:700");
+@import url("https://fonts.googleapis.com/css?family=Seaweed+Script");
 
 body {
-  font-family: 'Exo 2', sans-serif;
-  background-color: #a8a7a8;
+  font-family: "Exo 2", sans-serif;
+  background-color: #222;
 }
 
 ul {
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
   text-align: center;
-}
-
-li {}
-
-.main-title {
-  text-align: center;
-  font-size: 36px;
-  font-family: 'Exo 2', sans-serif;
 }
 
 .sub-main-title {
   text-align: center;
   font-size: 18px;
-  font-family: 'Exo 2', sans-serif;
+  font-family: "Exo 2", sans-serif;
 }
 
-.search-box {
+.sub-main-title2 {
   text-align: center;
-}
-
-.search-box-input {
-  font-family: 'Exo 2', sans-serif;
   font-size: 16px;
-  text-align: left;
-  font-size: 14px;
-  padding: 10px;
-  background: none;
-  border-color: #547a82;
-  border-radius: 5px;
+  font-family: "Exo 2", sans-serif;
 }
 
 .article-box {
   margin: 10px;
   list-style: none;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px -1px rgba(0, 0, 0, 0.3);
+  padding: 10px 20px 20px;
+  margin-bottom: 40px;
 }
 
 .article-title {
-  margin-top: 40px;
-  font-size: 20px;
+  margin: 20 0;
+  font-size: 25px;
   text-decoration: none;
   color: black;
+  max-width: 600px;
 }
 
 .article-description {
   margin: auto;
   max-width: 400px;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .article-image {
@@ -66,4 +58,77 @@ li {}
 
 .hidden {
   display: none;
+}
+
+.articles-container {
+  display: flex;
+}
+
+.main-title {
+  color: #fff;
+  font-family: Arvo;
+  font-weight: bold;
+  text-shadow: -3px -3px 0 #222, 3px -3px 0 #222, -3px 3px 0 #222,
+    3px 3px 0 #222, 4px 4px 0 #fff, 5px 5px 0 #fff, 6px 6px 0 #fff,
+    7px 7px 0 #fff;
+  line-height: 0.8em;
+  letter-spacing: 0.1em;
+  transform: scaleY(0.7);
+  -webkit-transform: scaleY(0.7);
+  -moz-transform: scaleY(0.7);
+  margin: 0;
+  text-align: center;
+}
+
+.text1 {
+  font-size: 80px;
+}
+
+.text2 {
+  font-size: 26px;
+  text-shadow: none;
+}
+
+.search-box {
+  text-align: center;
+  width: 500px;
+  margin: 50px auto;
+}
+
+input {
+  height: 60px;
+  width: 100%;
+  min-width: 100%;
+  padding: 0;
+  border-radius: 0;
+  background-color: transparent;
+  color: white;
+  font-size: 40px;
+  border: none;
+  outline: none;
+  border-bottom: 3px solid #333333;
+  font-family: Arvo;
+}
+
+.credit {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-family: "Chakra Petch", sans-serif;
+  color: #a8a7a8;
+  font-size: 14px;
+  text-align: center;
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
+
+a {
+  color: #355c7d;
+  text-decoration: none;
+  cursor: pointer;
+  margin: 10px 10px 10px 10px;
+}
+
+a:hover {
+  cursor: pointer;
+  color: #6c5c7b;
 }
