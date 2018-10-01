@@ -43,6 +43,12 @@ class Main extends React.Component {
     });
   }
 
+  componentDidMount() {
+    this.setState({
+      input: ""
+    });
+  }
+
   render() {
     const newsArticlesA = this.state.articles
       .slice(0, this.state.articles.length / 2)
@@ -82,12 +88,24 @@ class Main extends React.Component {
 
     return (
       <div className="main-container">
-        <h1 className="main-title">HOME COURT</h1>
-        <h3 className="sub-main-title">Get updated on your favorite sports!</h3>
-        <h3 className="sub-main-title2">Search by city or state</h3>
+        <h1 className="main-title text1">HOME COURT</h1>
+        <div class="credit">
+          Developed by{" "}
+          <a class="name" href="/">
+            Ben Pong
+          </a>
+          <a href="https://github.com/Benpong89">Github</a>
+          <a href="https://www.linkedin.com/in/ben-pongsanarakul-bb21922b">
+            LinkedIn
+          </a>
+        </div>
+        <h3 className="main-title text2">
+          Get updated on your favorite sports!
+        </h3>
         <form className="search-box" onSubmit={this.handleSubmit}>
           <input
             className="search-box-input"
+            placeholder="type your search here..."
             value={this.state.input}
             onChange={e => this.updateInputValue(e)}
           />
@@ -103,3 +121,5 @@ class Main extends React.Component {
 }
 
 export default Main;
+
+// <h3 className="main-title text2">Search by city or state</h3>
