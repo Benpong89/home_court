@@ -89,7 +89,7 @@ class Main extends React.Component {
     return (
       <div className="main-container">
         <h1 className="main-title text1">HOME COURT</h1>
-        <div class="credit">
+        <div className="credit">
           <a href="https://github.com/Benpong89">Github</a>
           <a href="https://www.linkedin.com/in/ben-pongsanarakul-bb21922b">
             LinkedIn

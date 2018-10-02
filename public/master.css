@@ -6,12 +6,23 @@
 @import url("https://fonts.googleapis.com/css?family=Seaweed+Script");
 
 body {
+  display: flex;
+  flex-direction: column;
   font-family: "Exo 2", sans-serif;
   background-color: #222;
+  align-items: center;
 }
 
 ul {
-  text-align: center;
+  /* display: flex;
+  flex-direction: column;
+  text-align: center; */
+  display: block;
+  width: 40%;
+}
+
+.articles-container {
+  display: flex;
 }
 
 .sub-main-title {
@@ -53,15 +64,11 @@ ul {
 
 .article-image {
   max-height: 250px;
-  max-width: 450px;
+  max-width: 100%;
 }
 
 .hidden {
   display: none;
-}
-
-.articles-container {
-  display: flex;
 }
 
 .main-title {
