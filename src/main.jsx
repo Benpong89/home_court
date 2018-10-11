@@ -17,7 +17,7 @@ class Main extends React.Component {
       `q=(NHL OR NFL OR NBA OR MLB) AND ${this.state.input}&` +
       "language=en&" +
       "from=2018-09-29&" +
-      "sortBy=popularity&" +
+      "sortBy=publishedAt&" +
       `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
     let result = await fetch(url).then(response => response.json());
     // console.log(result);
