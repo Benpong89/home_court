@@ -3,12 +3,16 @@ import React from "react";
 class Main extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { articles: [], input: "New York" };
+    this.state = { articles: [], input: "New York", show: false };
     this.fetchNews = this.fetchNews.bind(this);
     this.getNews = this.getNews.bind(this);
     this.updateInputValue = this.updateInputValue.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
+
+  toggleModal = () => {
+    this.setState({ show: !this.state.show });
+  };
 
   async getNews() {
     console.log(`${process.env.REACT_APP_NEWS_API_KEY}`);
@@ -20,7 +24,6 @@ class Main extends React.Component {
       "sortBy=publishedAt&" +
       `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
     let result = await fetch(url).then(response => response.json());
-    // console.log(result);
     return result.articles;
   }
 
@@ -86,6 +89,17 @@ class Main extends React.Component {
         );
       });
 
+    const Modal = ({ toggleModal, show }) => {
+      return (
+        <div className={show ? "modal show" : "modal hide"}>
+          <section className="modal-main">
+            Test Modal Message
+            <button onClick={toggleModal}>Close Modal</button>
+          </section>
+        </div>
+      );
+    };
+
     return (
       <div className="main-container">
         <h1 className="main-title text1">HOME COURT</h1>
@@ -111,6 +125,7 @@ class Main extends React.Component {
           <ul>{newsArticlesA}</ul>
           <ul>{newsArticlesB}</ul>
         </div>
+        );
       </div>
     );
   }
@@ -119,3 +134,10 @@ class Main extends React.Component {
 export default Main;
 
 // <h3 className="main-title text2">Search by city or state</h3>
+
+// <Modal show={this.state.show} toggleModal={this.toggleModal}>
+//   <p>{Modal}</p>
+// </Modal>
+// <button type="button" onClick={this.toggleModal}>
+//   Open Modal
+// </button>
