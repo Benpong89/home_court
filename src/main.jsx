@@ -1,9 +1,11 @@
 import React from "react";
+import moment from "moment";
 
 class Main extends React.Component {
   constructor(props) {
     super(props);
     this.state = { articles: [], input: "New York", show: false };
+
     this.fetchNews = this.fetchNews.bind(this);
     this.getNews = this.getNews.bind(this);
     this.updateInputValue = this.updateInputValue.bind(this);
@@ -20,7 +22,7 @@ class Main extends React.Component {
       "https://newsapi.org/v2/everything?" +
       `q=(NHL OR NFL OR NBA OR MLB) AND ${this.state.input}&` +
       "language=en&" +
-      "from=2018-10-31&" +
+      `from=${moment().format("YYYY-MM-DD")}&``` +
       "sortBy=publishedAt&" +
       `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
     let result = await fetch(url).then(response => response.json());
