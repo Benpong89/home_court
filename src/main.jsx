@@ -22,7 +22,7 @@ class Main extends React.Component {
       "https://newsapi.org/v2/everything?" +
       `q=(NHL OR NFL OR NBA OR MLB) AND ${this.state.input}&` +
       "language=en&" +
-      `from=${moment().format("YYYY-MM-DD")}&``` +
+      `from=${moment().format("YYYY-MM-DD")}&` +
       "sortBy=publishedAt&" +
       `apiKey=${process.env.REACT_APP_NEWS_API_KEY}`;
     let result = await fetch(url).then(response => response.json());
